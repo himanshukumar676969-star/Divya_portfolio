@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Divya Varjani | Educator & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5f2d;
+            --secondary: #97c4a2;
+            --accent: #d4a574;
+            --bg-light: #faf8f5;
+            --bg-cream: #f5f1e8;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --border: #d9cdb8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Decorative Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, rgba(44, 95, 45, 0.02) 0px, transparent 1px, transparent 40px, rgba(44, 95, 45, 0.02) 41px),
+                repeating-linear-gradient(0deg, rgba(44, 95, 45, 0.02) 0px, transparent 1px, transparent 40px, rgba(44, 95, 45, 0.02) 41px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-light) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '📚';
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 15rem;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .hero-content {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .hero-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .image-frame {
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(44, 95, 45, 0.2);
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .image-content {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-cream);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--secondary);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 5px;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 20px rgba(44, 95, 45, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1e3f1f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(44, 95, 45, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .section-description {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-cream);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+            border-top-color: var(--primary);
+        }
+
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .expertise-card p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary), var(--primary));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: calc(50% + 3rem);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 3rem);
+            text-align: right;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 0 0 4px var(--secondary);
+            z-index: 10;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-location {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content ul {
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content ul {
+            margin-right: 1.5rem;
+            list-style-position: inside;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .education-degree {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .education-institution {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-year {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 2.5rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '⭐';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+        }
+
+        .achievement-card:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 50px rgba(44, 95, 45, 0.3);
+        }
+
+        .achievement-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--bg-cream);
+            border-radius: 20px;
+            padding: 4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(44, 95, 45, 0.2);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-card:hover a {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            h1 { font-size: 3rem; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-image { order: -1; margin-bottom: 2rem; }
+            .cta-buttons { justify-content: center; }
+            .about-content { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .timeline::before { left: 20px; }
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+            .timeline-item:nth-child(even) .timeline-content ul {
+                margin-right: 0;
+                margin-left: 1.5rem;
+                list-style-position: outside;
+            }
+            .timeline-dot { left: 20px; }
+        }
+
+        @media (max-width: 640px) {
+            .cta-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Divya Varjani</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">Educator • Researcher • Mentor</div>
+                <h1>Divya Varjani</h1>
+                <p class="hero-subtitle">M.Sc. in Science | Passionate Educator</p>
+                <p class="hero-description">
+                    Dedicated to fostering academic excellence and nurturing curious minds. 
+                    With 2 years of teaching experience, I create engaging learning environments 
+                    where every student can thrive and reach their full potential.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get in Touch
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.open('https://www.linkedin.com/in/Divya-Varjani', '_blank')">
+                        View LinkedIn
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="image-content">
+                        👩‍🏫
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header fade-in">
+            <div class="section-tag">Introduction</div>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-description">
+                A passionate educator committed to making a difference in students' lives
+            </p>
+        </div>
+        
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <h3>My Teaching Philosophy</h3>
+                <p>
+                    Education is not just about transferring knowledge—it's about igniting curiosity, 
+                    fostering critical thinking, and empowering students to become lifelong learners. 
+                    I believe every student has unique potential waiting to be unlocked through 
+                    personalized attention and innovative teaching methods.
+                </p>
+                <p>
+                    With a Master's degree in Science and hands-on experience in both classroom and 
+                    one-on-one tutoring environments, I bring a comprehensive understanding of diverse 
+                    learning styles and effective pedagogical strategies. My approach integrates 
+                    technology, real-world applications, and interactive learning to create memorable 
+                    educational experiences.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2+</span>
+                    <span class="stat-label">Years Teaching</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Students Mentored</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Subjects Taught</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Research Publication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="section-header fade-in">
+            <div class="section-tag">Core Competencies</div>
+            <h2 class="section-title">Areas of Expertise</h2>
+            <p class="section-description">
+                Specialized skills and teaching methodologies that drive student success
+            </p>
+        </div>
+
+        <div class="expertise-grid fade-in">
+            <div class="expertise-card">
+                <span class="expertise-icon">📖</span>
+                <h3>Subject Matter Expertise</h3>
+                <p>
+                    Deep proficiency in English, Hindi, Biology, Chemistry, and Environmental Studies. 
+                    Comprehensive knowledge of curriculum standards and contemporary best practices in 
+                    science education.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <span class="expertise-icon">🎯</span>
+                <h3>Differentiated Instruction</h3>
+                <p>
+                    Expert in adapting teaching methods to accommodate diverse learning styles, abilities, 
+                    and pace. Creating inclusive environments where every student feels valued and supported.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <span class="expertise-icon">✏️</span>
+                <h3>Lesson Planning</h3>
+                <p>
+                    Designing engaging, objective-aligned lesson plans that incorporate interactive elements, 
+                    real-world applications, and formative assessments to ensure comprehensive understanding.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <span class="expertise-icon">📊</span>
+                <h3>Assessment & Evaluation</h3>
+                <p>
+                    Skilled in designing both formative and summative assessments to measure student progress, 
+                    inform instructional decisions, and provide meaningful feedback for growth.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <span class="expertise-icon">💻</span>
+                <h3>Technology Integration</h3>
+                <p>
+                    Leveraging educational technology tools and digital platforms to enhance teaching 
+                    effectiveness, increase student engagement, and prepare learners for the digital age.
+                </p>
+            </div>
+
+            <div class="expertise-card">
+                <span class="expertise-icon">🤝</span>
+                <h3>Classroom Management</h3>
+                <p>
+                    Creating positive, productive learning environments through effective behavior management 
+                    strategies, clear expectations, and fostering mutual respect among students.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header fade-in">
+            <div class="section-tag">Professional Journey</div>
+            <h2 class="section-title">Teaching Experience</h2>
+            <p class="section-description">
+                Dedicated years of shaping young minds and fostering academic growth
+            </p>
+        </div>
+
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2020 - 2022</div>
+                    <h3>Home Tutor</h3>
+                    <p class="timeline-location">Private Tutoring | Jaipur</p>
+                    <ul>
+                        <li>Provided personalized tutoring in English, Hindi, Biology, Chemistry, and Environmental Studies</li>
+                        <li>Developed customized lesson plans tailored to individual student learning needs and goals</li>
+                        <li>Monitored student progress through regular assessments and adjusted teaching strategies accordingly</li>
+                        <li>Fostered supportive and encouraging learning environment that promoted academic confidence</li>
+                        <li>Maintained regular communication with parents regarding student performance and areas for improvement</li>
+                        <li>Utilized creative teaching methods and diverse resources to enhance student engagement and comprehension</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">May 2021 - September 2021</div>
+                    <h3>Customer Relationship Management</h3>
+                    <p class="timeline-location">HDFC Bank | Jaipur</p>
+                    <ul>
+                        <li>Successfully managed and cultivated relationships with diverse client base</li>
+                        <li>Provided personalized financial guidance and solutions aligned with individual client needs</li>
+                        <li>Exceeded sales targets through proactive engagement and strategic product recommendations</li>
+                        <li>Resolved customer inquiries promptly while maintaining exceptional service standards</li>
+                        <li>Developed strong communication and interpersonal skills applicable to educational settings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header fade-in">
+            <div class="section-tag">Academic Background</div>
+            <h2 class="section-title">Education & Training</h2>
+            <p class="section-description">
+                Strong academic foundation in science and continuous professional development
+            </p>
+        </div>
+
+        <div class="education-grid fade-in">
+            <div class="education-card">
+                <span class="education-icon">🎓</span>
+                <h3 class="education-degree">Master of Science (M.Sc.)</h3>
+                <p class="education-institution">Biyani Group of Colleges</p>
+                <p class="education-year">August 2023</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-icon">🎓</span>
+                <h3 class="education-degree">Bachelor of Science (B.Sc.)</h3>
+                <p class="education-institution">Sant Jayacharya</p>
+                <p class="education-year">June 2022</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-icon">📜</span>
+                <h3 class="education-degree">RSCIT Computer Course</h3>
+                <p class="education-institution">Computer Literacy</p>
+                <p class="education-year">May 2021 - September 2021</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-icon">📜</span>
+                <h3 class="education-degree">Soft Skills Training</h3>
+                <p class="education-institution">Professional Development</p>
+                <p class="education-year">July 2023 - September 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section>
+        <div class="section-header fade-in">
+            <div class="section-tag">Recognition</div>
+            <h2 class="section-title">Achievements & Awards</h2>
+            <p class="section-description">
+                Milestones that reflect dedication to excellence in education and research
+            </p>
+        </div>
+
+        <div class="achievements-grid fade-in">
+            <div class="achievement-card">
+                <h3>Research Publication</h3>
+                <p>Published research paper on cancer treatment in Biyani Publication, contributing to scientific knowledge</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Gargi Award 2019</h3>
+                <p>Received prestigious Gargi Award from Rajasthan Government for academic excellence and merit</p>
+            </div>
+
+            <div class="achievement-card">
+                <h3>Continuous Learner</h3>
+                <p>Completed multiple professional development courses in technology integration and soft skills</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header fade-in">
+            <div class="section-tag">Let's Connect</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-description">
+                I'm always open to discussing educational opportunities, collaborations, or mentorship
+            </p>
+        </div>
+
+        <div class="contact-grid fade-in">
+            <div class="contact-card" onclick="window.location.href='mailto:varjanidivya@gmail.com'">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:varjanidivya@gmail.com">varjanidivya@gmail.com</a>
+            </div>
+
+            <div class="contact-card" onclick="window.location.href='tel:+919057755614'">
+                <div class="contact-icon">📱</div>
+                <h3>Phone</h3>
+                <a href="tel:+919057755614">+91 9057755614</a>
+            </div>
+
+            <div class="contact-card" onclick="window.open('https://www.linkedin.com/in/Divya-Varjani', '_blank')">
+                <div class="contact-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/Divya-Varjani" target="_blank">linkedin.com/in/Divya-Varjani</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Location</h3>
+                <a>Jaipur, Rajasthan, India</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-quote">
+            "Education is the most powerful weapon which you can use to change the world." 
+            <br>— Nelson Mandela
+        </p>
+        <p class="footer-text">
+            © 2025 Divya Varjani | Educator & Researcher | Made with passion for teaching
+        </p>
+    </footer>
+
+    <script>
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
